@@ -51,3 +51,10 @@ libxtst6
 ```
 *[更多系统依赖](https://pptr.dev/guides/system-requirements)*：
 
+.env 基础配置
+```shell
+QINIU_ACCESS_KEY=
+QINIU_SECRET_KEY=
+QINIU_BUCKET=
+QINIU_BUCKET_DOMAIN=
+```
