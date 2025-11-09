@@ -1,0 +1,2 @@
+# html2pdf
+这是一个用于将web前端网页通过后端服务生成pdf的服务端工具，主要使用Puppeteer进行实现
