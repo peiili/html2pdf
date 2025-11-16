@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const putQiniu = require('../utils/putQiniu')
 class PDFService {
   constructor() {
     this.browser = null;
@@ -60,10 +59,6 @@ class PDFService {
           left: '1cm'
         }
       });
-      putQiniu('测试', pdfBuffer, (err, obj)=>{
-        console.log(obj);
-
-      })
       console.log('PDF 生成成功');
       return pdfBuffer;
 

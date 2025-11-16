@@ -59,13 +59,14 @@ class HTTPServer {
    */
   sendPDFResponse(res, pdfBuffer) {
     res.writeHead(200, {
-      'Content-Type': 'application/pdf',
+      'Content-Type': 'application/octet-stream',
       'Content-Disposition': 'attachment; filename="converted.pdf"',
       'Content-Length': pdfBuffer.length
     });
 
     // 流式传输 PDF 数据
     res.end(pdfBuffer);
+
     console.log('PDF 流传输完成');
   }
 
