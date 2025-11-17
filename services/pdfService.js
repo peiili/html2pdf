@@ -12,13 +12,14 @@ class PDFService {
     this.browser = await puppeteer.launch({
       headless: 'new',
       args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--no-first-run',
-        '--no-zygote',
-        '--disable-gpu'
+        '--ignore-certificate-errors',
+      '--ignore-certificate-errors-spki-list',
+      '--ignore-ssl-errors',
+      '--disable-web-security',
+      '--allow-running-insecure-content',
+      '--disable-features=VizDisplayCompositor',
+      '--no-sandbox',
+      '--disable-setuid-sandbox'
       ]
     });
     console.log('Puppeteer 浏览器启动成功');
@@ -46,7 +47,7 @@ class PDFService {
       });
 
       // 等待页面完全加载
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 4000));
 
       console.log('正在生成 PDF...');
       const pdfBuffer = await page.pdf({
